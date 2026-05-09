@@ -153,6 +153,75 @@ h3 { font-size: 1.25rem; font-weight: 700; }
 .price-features { text-align: left; margin-bottom: 28px; }
 .price-features li { padding: 8px 0; font-size: 0.9rem; color: #5a6578; border-bottom: 1px solid #f4f5f7; }
 .price-features li:last-child { border: none; }
+.price-note { font-size: 0.78rem; color: #8a94a6; margin-top: 12px; text-align: center; }
+
+/* === Add-on (CallbackQueue) === */
+.addon-card {
+    margin-top: 40px;
+    background: linear-gradient(135deg, #1a3a5c 0%, #2a5080 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 12px 40px rgba(26,58,92,0.15);
+}
+.addon-header { text-align: left; }
+.addon-badge {
+    display: inline-block;
+    background: rgba(232,114,42,0.2); color: #ffb37a;
+    border: 1px solid rgba(232,114,42,0.4);
+    font-size: 0.75rem; font-weight: 700;
+    padding: 5px 14px; border-radius: 100px;
+    margin-bottom: 14px;
+}
+.addon-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+.addon-amount {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+.addon-amount .dollar { font-size: 1.2rem; }
+.addon-amount .once { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+.addon-body { text-align: left; }
+.addon-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 18px;
+}
+.addon-features { list-style: none; padding: 0; margin: 0 0 22px; }
+.addon-features li {
+    padding: 6px 0;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.85);
+    border: none;
+}
+.addon-card .btn-outline {
+    border-color: #fff; color: #fff;
+}
+.addon-card .btn-outline:hover {
+    background: #fff; color: #1a3a5c;
+}
+.addon-card .price-note {
+    color: rgba(255,255,255,0.6);
+}
+@media (max-width: 720px) {
+    .addon-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 28px 24px;
+    }
+    .addon-header { text-align: center; }
+    .addon-amount { font-size: 2rem; }
+}
 
 /* === Why Us === */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

@@ -54,7 +54,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         '🎉 LOVE WHAT YOU SEE? Here\'s how to make it yours:\n\n' +
         '1. REVIEW your preview — click around, check it on your phone, show your team\n' +
         '2. CONFIRM your details — we\'ll verify your business info, phone, hours, and reviews\n' +
-        '3. CHOOSE A PLAN — pick Starter ($29/mo) or Pro ($79/mo with review management)\n' +
+        '3. CHOOSE A PLAN — Starter $9/mo (1-page site, BYO domain), Plus $19/mo (multi-page + Spanish + reviews + domain included), or Pro $39/mo (booking widget + lead capture + monthly performance email). Optional CallbackQueue add-on $49/mo (missed-call SMS auto-reply).\n' +
         '4. GO LIVE — we connect your custom domain, finalize your content, and launch. Typical turnaround: 3-5 business days.\n\n' +
         '💡 WHAT\'S INCLUDED WHEN YOU GO LIVE:\n' +
         '• Your own custom domain (e.g. yourbusiness.com)\n' +
@@ -80,22 +80,28 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     }).catch(() => {});
 
     var selPlan = window._selectedPlan || '';
-    var starterStyle = selPlan === 'starter'
-        ? 'display:inline-block;background:#f97316;color:#fff;padding:14px 32px;border-radius:50px;font-size:1.05rem;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,0.3);'
-        : 'display:inline-block;background:transparent;color:#f97316;border:2px solid #f97316;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;';
-    var proStyle = selPlan === 'pro'
-        ? 'display:inline-block;background:#f97316;color:#fff;padding:14px 32px;border-radius:50px;font-size:1.05rem;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,0.3);'
-        : 'display:inline-block;background:transparent;color:#f97316;border:2px solid #f97316;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;';
+    var emphasizedStyle = 'display:inline-block;background:#f97316;color:#fff;padding:14px 28px;border-radius:50px;font-size:1rem;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,0.3);';
+    var dimmedStyle = 'display:inline-block;background:transparent;color:#f97316;border:2px solid #f97316;padding:12px 24px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;';
+    function styleFor(p) { return selPlan === p ? emphasizedStyle : dimmedStyle; }
+    // Stripe Payment Link for Starter ($9/mo) is live. Plus/Pro/CallbackQueue links pending — route to a contact email until Matt creates the new Payment Links.
+    var planLabel = { starter: 'Starter', plus: 'Plus', pro: 'Pro', callbackqueue: 'CallbackQueue' }[selPlan] || '';
     var buyHeading = selPlan
-        ? 'Almost there! Complete your ' + (selPlan === 'starter' ? 'Starter' : 'Pro') + ' subscription:'
+        ? 'Almost there! Complete your ' + planLabel + ' subscription:'
         : 'Ready to make it yours? Pick a plan:';
+    var contactPlusLink = 'mailto:hello@yoursitesdone.com?subject=Plus%20%2419%2Fmo&body=Hi%20Matt%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Plus%20plan.%0ABusiness%20name%3A%20';
+    var contactProLink = 'mailto:hello@yoursitesdone.com?subject=Pro%20%2439%2Fmo&body=Hi%20Matt%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Pro%20plan.%0ABusiness%20name%3A%20';
+    var contactCBQLink = 'mailto:hello@yoursitesdone.com?subject=CallbackQueue%20%2449%2Fmo&body=Hi%20Matt%2C%20I%27d%20like%20to%20add%20CallbackQueue.%0ABusiness%20name%3A%20';
     var buyButtons = '<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">' +
         '<p style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-bottom:16px;">' + buyHeading + '</p>' +
-        '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">' +
-        '<a href="https://buy.stripe.com/4gMdR17aVe194H5esw5Ne04" target="_blank" style="' + starterStyle + '">Starter — $29/mo</a>' +
-        '<a href="https://buy.stripe.com/7sYaEP2UFbT15L97045Ne05" target="_blank" style="' + proStyle + '">Pro — $79/mo</a>' +
+        '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">' +
+        '<a href="https://buy.stripe.com/fZudR1eDng9h3D1fwA5Ne09" target="_blank" style="' + styleFor('starter') + '">Starter — $9/mo</a>' +
+        '<a href="' + contactPlusLink + '" style="' + styleFor('plus') + '">Plus — $19/mo</a>' +
+        '<a href="' + contactProLink + '" style="' + styleFor('pro') + '">Pro — $39/mo</a>' +
         '</div>' +
-        '<p style="margin-top:12px;font-size:0.8rem;color:rgba(255,255,255,0.4);">$0 setup for founding clients · No contracts · Cancel anytime</p>' +
+        '<div style="margin-top:14px;text-align:center;">' +
+        '<a href="' + contactCBQLink + '" style="' + styleFor('callbackqueue') + '">+ CallbackQueue Add-On — $49/mo</a>' +
+        '</div>' +
+        '<p style="margin-top:14px;font-size:0.8rem;color:rgba(255,255,255,0.4);">No setup fees · No contracts · One-click cancel anytime</p>' +
         '</div>';
 
     // Check if we have a preview ready
@@ -143,14 +149,24 @@ document.querySelectorAll('a[data-plan]').forEach(a => {
 
         if (plan === 'starter') {
             banner.style.display = 'block';
-            bannerText.innerHTML = '🎉 Great choice — Starter Plan ($29/mo)';
+            bannerText.innerHTML = '🎉 Great choice — Starter Plan ($9/mo)';
             heading.textContent = "Let's Build Your Website";
             sub.textContent = "Fill out the basics below and we'll create a custom preview of your new site. Takes 30 seconds.";
+        } else if (plan === 'plus') {
+            banner.style.display = 'block';
+            bannerText.innerHTML = '📈 Great choice — Plus Plan ($19/mo)';
+            heading.textContent = "Let's Build Your Website";
+            sub.textContent = "Fill out the basics below and we'll create a multi-page custom preview with Spanish toggle, reviews, and local SEO pages.";
         } else if (plan === 'pro') {
             banner.style.display = 'block';
-            bannerText.innerHTML = '⚡ Great choice — Pro Plan ($79/mo)';
+            bannerText.innerHTML = '⭐ Great choice — Pro Plan ($39/mo)';
             heading.textContent = "Let's Build Your Website";
-            sub.textContent = "Fill out the basics below and we'll create a custom preview of your new site. The more detail you add, the better it looks.";
+            sub.textContent = "Fill out the basics below and we'll create a full-service preview with online booking, lead capture, and a monthly performance email.";
+        } else if (plan === 'callbackqueue') {
+            banner.style.display = 'block';
+            bannerText.innerHTML = '📞 Great choice — CallbackQueue Add-On ($49/mo)';
+            heading.textContent = "Let's Set Up CallbackQueue";
+            sub.textContent = "Fill out the basics below. We'll text-back missed callers in 10 seconds — works with any plan or standalone.";
         }
 
         // Store selected plan for after form submission

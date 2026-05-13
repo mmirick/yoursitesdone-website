@@ -1,0 +1,26 @@
+{
+  "business_name": "A Baseball Clubhouse & Comic Books",
+  "owner_name": "Phil Knoll",
+  "phone": "(310) 675-3333",
+  "email": "",
+  "address": "13308 S Inglewood Ave, Hawthorne, CA 90250",
+  "service_area": "Hawthorne & South Bay",
+  "hours": "Mon-Sat 11am-6pm (verify in person)",
+  "services": [
+    "Vintage Sports Cards",
+    "Modern Sports Cards & Wax",
+    "Classic & New Comic Books",
+    "Sports Memorabilia & Autographs",
+    "Buy / Sell / Trade",
+    "Collection Appraisals",
+    "Card & Comic Grading Consultation"
+  ],
+  "tagline": "Hawthorne's Original Card & Comic Shop — Family-Run, South Bay Local",
+  "rating": "4.3",
+  "review_count": "55",
+  "color_primary": "#B71C1C",
+  "color_accent": "#0D47A1",
+  "slug": "baseball-clubhouse",
+  "logo_path": "",
+  "photos": []
+}

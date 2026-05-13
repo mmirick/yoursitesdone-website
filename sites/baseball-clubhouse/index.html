@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Baseball Clubhouse & Comic Books — Hawthorne's Original Card & Comic Shop</title>
+    <meta name="description" content="A Baseball Clubhouse & Comic Books in Hawthorne, CA. Family-run since the South Bay's card-shop heyday. Vintage and modern sports cards, comics, memorabilia, buy/sell/trade. Call (310) 675-3333.">
+    <style>
+        :root {
+            --primary: #B71C1C;
+            --accent: #0D47A1;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #7f0d0d 100%);
+            color: white; padding: 3rem 1.5rem; text-align: center;
+        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .hero .tagline { font-size: 1.1rem; opacity: 0.95; margin-bottom: 1.5rem; }
+        .hero .cta-btn {
+            display: inline-block; padding: 0.9rem 2rem; background: white;
+            color: var(--primary); font-weight: 700; font-size: 1.1rem;
+            border-radius: 8px; text-decoration: none; transition: transform 0.2s;
+        }
+        .hero .cta-btn:hover { transform: scale(1.05); }
+        .hero .phone { font-size: 1.3rem; margin-top: 1rem; font-weight: 600; }
+        .hero .phone a { color: white; text-decoration: none; }
+        .hero .stars { margin-top: 0.75rem; font-size: 0.95rem; opacity: 0.95; }
+
+        /* Sections */
+        .section { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .section h2 { font-size: 1.6rem; color: var(--primary); margin-bottom: 1.5rem; text-align: center; }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .service-card {
+            background: var(--card); padding: 1.25rem; border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center;
+            border-left: 4px solid var(--accent);
+        }
+        .service-card li { list-style: none; font-size: 1rem; padding: 0.25rem 0; }
+
+        /* Info Bar */
+        .info-bar {
+            background: var(--card); padding: 2rem; border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;
+        }
+        .info-item h3 { color: var(--primary); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+        .info-item p, .info-item a { font-size: 1rem; color: var(--text); text-decoration: none; }
+        .info-item a:hover { color: var(--accent); }
+
+        /* About strip */
+        .about-strip {
+            background: var(--card); border-radius: 10px; padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center;
+        }
+        .about-strip p { font-size: 1.05rem; color: #475569; line-height: 1.7; }
+
+        /* Contact */
+        .contact-section { background: var(--primary); color: white; padding: 3rem 1.5rem; text-align: center; }
+        .contact-section h2 { color: white; }
+        .contact-section .phone-big { font-size: 2rem; font-weight: 700; margin: 1rem 0; }
+        .contact-section .phone-big a { color: white; text-decoration: none; }
+        .contact-section .cta-btn {
+            display: inline-block; padding: 1rem 2.5rem; background: white;
+            color: var(--primary); font-weight: 700; font-size: 1.1rem;
+            border-radius: 8px; text-decoration: none; margin-top: 1rem;
+        }
+
+        /* Contact Form */
+        .form-container { max-width: 500px; margin: 2rem auto 0; text-align: left; }
+        .form-container input, .form-container textarea {
+            width: 100%; padding: 0.75rem; border: none; border-radius: 6px;
+            margin-bottom: 0.75rem; font-size: 1rem;
+        }
+        .form-container textarea { min-height: 80px; resize: vertical; }
+        .form-container button {
+            width: 100%; padding: 0.9rem; background: var(--accent); color: white;
+            border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 2rem; color: #64748b; font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        footer a { color: var(--primary); text-decoration: none; }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6rem; }
+            .contact-section .phone-big { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>A Baseball Clubhouse & Comic Books</h1>
+        <p class="tagline">Hawthorne's Original Card & Comic Shop — Family-Run, South Bay Local</p>
+        <a href="tel:+13106753333" class="cta-btn">📞 Call (310) 675-3333</a>
+        <p class="phone">13308 S Inglewood Ave, Hawthorne</p>
+        <p class="stars">⭐ 4.3 on Google · 55 reviews</p>
+    </section>
+
+    <!-- About strip -->
+    <section class="section">
+        <div class="about-strip">
+            <p>A South Bay institution. Vintage and modern sports cards, comics, memorabilia. We buy, sell, trade, and appraise collections of every size — from one card to a basement full of boxes.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section">
+        <h2>What We Do</h2>
+        <div class="services-grid">
+            <div class="service-card"><li>Vintage Sports Cards</li></div>
+            <div class="service-card"><li>Modern Sports Cards & Wax</li></div>
+            <div class="service-card"><li>Classic & New Comic Books</li></div>
+            <div class="service-card"><li>Sports Memorabilia & Autographs</li></div>
+            <div class="service-card"><li>Buy / Sell / Trade</li></div>
+            <div class="service-card"><li>Collection Appraisals</li></div>
+            <div class="service-card"><li>Grading Consultation</li></div>
+        </div>
+    </section>
+
+    <!-- Info -->
+    <section class="section">
+        <h2>Visit the Shop</h2>
+        <div class="info-bar">
+            <div class="info-item">
+                <h3>📍 Location</h3>
+                <p>13308 S Inglewood Ave<br>Hawthorne, CA 90250</p>
+            </div>
+            <div class="info-item">
+                <h3>🕐 Hours</h3>
+                <p>Mon – Sat<br>11am – 6pm</p>
+            </div>
+            <div class="info-item">
+                <h3>📞 Phone</h3>
+                <p><a href="tel:+13106753333">(310) 675-3333</a></p>
+            </div>
+            <div class="info-item">
+                <h3>👤 Owner</h3>
+                <p>Phil Knoll</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <h2>Got a Collection? Looking for a Card?</h2>
+        <p>Give us a call — we'll take a look, give you an honest take, and pay fair prices.</p>
+        <div class="phone-big"><a href="tel:+13106753333">📞 (310) 675-3333</a></div>
+        <a href="#contact-form" class="cta-btn">Send a Message</a>
+
+        <div class="form-container" id="contact-form">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Phone (optional)">
+                <textarea name="message" placeholder="What can we help with? Buy / sell / trade / appraise / specific card looking for"></textarea>
+                <input type="hidden" name="_subject" value="New lead from A Baseball Clubhouse website">
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 A Baseball Clubhouse & Comic Books. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Website by <a href="https://yoursitesdone.com">YourSitesDone</a></p>
+    </footer>
+</body>
+</html>

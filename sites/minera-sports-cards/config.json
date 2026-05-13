@@ -1,0 +1,27 @@
+{
+  "business_name": "Minera Sports Cards & Collectibles",
+  "owner_name": "",
+  "phone": "(424) 456-7877",
+  "email": "minerasportscards@gmail.com",
+  "address": "11939 S Inglewood Ave, Hawthorne, CA 90250",
+  "service_area": "Hawthorne & South Bay",
+  "hours": "Open Daily 1pm – 7pm",
+  "services": [
+    "Sports Card Singles (NFL, NBA, MLB, NHL)",
+    "Pokémon TCG & Sealed Product",
+    "Sealed Boxes, Cases & Wax",
+    "Personal Buying Service",
+    "Custom Slabs & Toploaders",
+    "In-Store Box Breaks & Events",
+    "Trade-Ins, Buys & Appraisals"
+  ],
+  "tagline": "Hawthorne's Sports Card Destination — 4.7★ on Google",
+  "rating": "4.7",
+  "review_count": "49",
+  "instagram": "@minerasportscards_com",
+  "color_primary": "#1B4B8C",
+  "color_accent": "#C9A227",
+  "slug": "minera-sports-cards",
+  "logo_path": "",
+  "photos": []
+}

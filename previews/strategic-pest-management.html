@@ -28,10 +28,10 @@
         /* NAV */
         .emergency-bar { background: #FFF3E0; padding: 12px; text-align: center; font-weight: 600; font-size: 14px; color: var(--warning); }
         .emergency-bar a { color: var(--warning); text-decoration: underline; }
-        .nav { padding: 16px 0; background: var(--dark); position: sticky; top: 0; z-index: 100; }
+        .nav { padding: 10px 0; background: var(--dark); position: sticky; top: 0; z-index: 100; }
         .nav .container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-size: 20px; font-weight: 800; color: var(--white); text-decoration: none; }
-        .nav-logo span { color: var(--accent); }
+        .nav-logo { display: block; }
+        .nav-logo img { height: 52px; display: block; }
         .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
         .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 500; font-size: 14px; transition: color 0.2s; }
         .nav-links a:hover { color: var(--white); }
@@ -147,6 +147,7 @@
             .stats { gap: 24px; flex-wrap: wrap; }
             .nav-links { display: none; }
             .mobile-menu { display: block; }
+            .nav-logo img { height: 42px; }
             .form-row { flex-direction: column; }
             .footer-grid { grid-template-columns: 1fr; }
             .trust-items { gap: 20px; }
@@ -162,7 +163,7 @@
 
     <nav class="nav">
         <div class="container">
-            <a href="#" class="nav-logo">Strategic <span>Pest Management</span></a>
+            <a href="#" class="nav-logo"><img src="spm-logo.svg" alt="Strategic Pest Management, Inc. — Creative Solutions"></a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">How It Works</a></li>
